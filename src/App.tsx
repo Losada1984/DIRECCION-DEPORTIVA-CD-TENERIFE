@@ -838,12 +838,12 @@ export default function App() {
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-tenerife-blue/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-tenerife-blue/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <header className="h-20 border-b border-white/10 bg-tenerife-dark/40 backdrop-blur-xl sticky top-0 z-40 px-6 flex items-center justify-between">
-        <div className="flex items-center space-x-4">
+      <header className="h-16 md:h-20 border-b border-white/10 bg-tenerife-dark/40 backdrop-blur-xl sticky top-0 z-40 px-4 md:px-6 flex items-center justify-between">
+        <div className="flex items-center space-x-2 md:space-x-4">
           <img 
             src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/CD_Tenerife_logo.svg/1200px-CD_Tenerife_logo.svg.png" 
             alt="Logo" 
-            className="h-12 w-auto object-contain logo-glow"
+            className="h-10 md:h-12 w-auto object-contain logo-glow"
             referrerPolicy="no-referrer"
           />
           <div className="hidden sm:block">
@@ -852,27 +852,27 @@ export default function App() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-2 md:space-x-6">
           <div className="flex items-center bg-white/5 rounded-2xl p-1 border border-white/10">
             <button 
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className={cn(
-                "p-2 rounded-xl transition-all group relative",
+                "p-1.5 md:p-2 rounded-xl transition-all group relative",
                 sidebarOpen 
                   ? "bg-tenerife-blue text-white shadow-lg" 
                   : "text-gray-400 hover:text-white hover:bg-white/5"
               )}
               title={sidebarOpen ? "Ocultar Filtros" : "Mostrar Filtros"}
             >
-              <Filter className="w-5 h-5" />
+              <Filter className="w-4 h-4 md:w-5 md:h-5" />
             </button>
             <div className="w-px h-4 bg-white/10 mx-1" />
             <button 
               onClick={resetFilters}
-              className="p-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all group relative"
+              className="p-1.5 md:p-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all group relative"
               title="Reestablecer todos los filtros"
             >
-              <RotateCcw className="w-5 h-5 group-hover:rotate-[-45deg] transition-transform" />
+              <RotateCcw className="w-4 h-4 md:w-5 md:h-5 group-hover:rotate-[-45deg] transition-transform" />
             </button>
           </div>
 
@@ -880,37 +880,37 @@ export default function App() {
             <button 
               onClick={() => setActiveTab('pitch')}
               className={cn(
-                "flex items-center px-3 md:px-4 py-1.5 md:py-2 rounded-xl text-[10px] md:text-sm font-semibold transition-all",
+                "flex items-center px-2 md:px-4 py-1 md:py-2 rounded-xl text-[9px] md:text-sm font-semibold transition-all",
                 activeTab === 'pitch' ? "bg-tenerife-blue text-white shadow-lg" : "text-gray-400 hover:text-white"
               )}
             >
-              <LayoutDashboard className="w-3 h-3 md:w-4 md:h-4 mr-1.5 md:mr-2" />
+              <LayoutDashboard className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
               <span className="hidden xs:inline">Campograma</span>
               <span className="xs:hidden">Campo</span>
             </button>
             <button 
               onClick={() => setActiveTab('table')}
               className={cn(
-                "flex items-center px-3 md:px-4 py-1.5 md:py-2 rounded-xl text-[10px] md:text-sm font-semibold transition-all",
+                "flex items-center px-2 md:px-4 py-1 md:py-2 rounded-xl text-[9px] md:text-sm font-semibold transition-all",
                 activeTab === 'table' ? "bg-tenerife-blue text-white shadow-lg" : "text-gray-400 hover:text-white"
               )}
             >
-              <TableIcon className="w-3 h-3 md:w-4 md:h-4 mr-1.5 md:mr-2" />
+              <TableIcon className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
               <span className="hidden xs:inline">Tabla Maestra</span>
               <span className="xs:hidden">Tabla</span>
             </button>
           </nav>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 md:space-x-3">
             <button 
               onClick={() => {
                 localStorage.removeItem('scouting_auth');
                 setIsLoggedIn(false);
               }}
-              className="p-2.5 bg-red-500/10 hover:bg-red-500/20 text-red-500 rounded-xl transition-all border border-red-500/20"
+              className="p-2 md:p-2.5 bg-red-500/10 hover:bg-red-500/20 text-red-500 rounded-xl transition-all border border-red-500/20"
               title="Cerrar Sesión"
             >
-              <LogOut className="w-5 h-5" />
+              <LogOut className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
         </div>

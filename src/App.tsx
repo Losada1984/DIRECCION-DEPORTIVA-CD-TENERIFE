@@ -63,20 +63,20 @@ const SplashScreen = ({ onLogin }: { onLogin: (pass: string) => void }) => {
         {/* Spectacular Background Effects */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           {/* Outer Rotating Ring */}
-          <div className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] border border-tenerife-blue/20 rounded-full animate-spin-slow border-dashed" />
+          <div className="absolute w-[260px] h-[260px] md:w-[450px] md:h-[450px] border border-tenerife-blue/20 rounded-full animate-spin-slow border-dashed" />
           {/* Inner Rotating Ring */}
-          <div className="absolute w-[250px] h-[250px] md:w-[380px] md:h-[380px] border border-white/10 rounded-full animate-spin-reverse-slow border-dotted" />
+          <div className="absolute w-[220px] h-[220px] md:w-[380px] md:h-[380px] border border-white/10 rounded-full animate-spin-reverse-slow border-dotted" />
           {/* Pulsing Glows */}
-          <div className="absolute w-64 h-64 md:w-96 md:h-96 bg-tenerife-blue/30 blur-[80px] rounded-full animate-pulse" />
-          <div className="absolute w-48 h-48 md:w-72 md:h-72 bg-white/5 blur-[40px] rounded-full animate-pulse-glow" />
+          <div className="absolute w-56 h-56 md:w-96 md:h-96 bg-tenerife-blue/30 blur-[80px] rounded-full animate-pulse" />
+          <div className="absolute w-40 h-40 md:w-72 md:h-72 bg-white/5 blur-[40px] rounded-full animate-pulse-glow" />
           {/* Radar Sweep Effect */}
-          <div className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full bg-gradient-to-tr from-tenerife-blue/20 to-transparent animate-spin-slow opacity-30" />
+          <div className="absolute w-[260px] h-[260px] md:w-[450px] md:h-[450px] rounded-full bg-gradient-to-tr from-tenerife-blue/20 to-transparent animate-spin-slow opacity-30" />
         </div>
 
         <img 
           src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/CD_Tenerife_logo.svg/1200px-CD_Tenerife_logo.svg.png" 
           alt="CD Tenerife Logo" 
-          className="h-40 md:h-56 w-auto relative z-10 logo-glow object-contain"
+          className="h-32 md:h-56 w-auto relative z-10 logo-glow object-contain"
           referrerPolicy="no-referrer"
         />
       </motion.div>
@@ -87,12 +87,12 @@ const SplashScreen = ({ onLogin }: { onLogin: (pass: string) => void }) => {
         transition={{ delay: 0.2, duration: 0.6 }}
         className="text-center z-10"
       >
-        <h1 className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tighter text-glow uppercase">
+        <h1 className="text-3xl md:text-5xl font-black text-white mb-3 tracking-tighter text-glow uppercase">
           CD Tenerife
         </h1>
         <div className="h-1 w-24 bg-tenerife-blue mx-auto mb-4 rounded-full shadow-[0_0_10px_rgba(0,84,166,0.8)]" />
-        <p className="text-white font-black tracking-widest text-xs uppercase mb-1">DIRECCIÓN DEPORTIVA 26-27</p>
-        <p className="text-tenerife-blue font-display font-black tracking-[0.4em] text-xs uppercase mb-8 text-glow">
+        <p className="text-white font-black tracking-widest text-[10px] md:text-xs uppercase mb-1">DIRECCIÓN DEPORTIVA 26-27</p>
+        <p className="text-tenerife-blue font-display font-black md:tracking-[0.4em] tracking-wider text-[10px] md:text-xs uppercase mb-8 text-glow px-4">
           App creada por Manel Losada
         </p>
       </motion.div>
@@ -101,7 +101,7 @@ const SplashScreen = ({ onLogin }: { onLogin: (pass: string) => void }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="text-gray-400 text-center max-w-md px-8 mb-10 italic text-xs leading-relaxed z-10"
+        className="text-gray-400 text-center max-w-md px-8 mb-10 italic text-[10px] md:text-xs leading-relaxed z-10"
       >
         "El uso de datos y modelos de Big Data es el motor que transforma la intuición en precisión para las Direcciones Deportivas modernas."
       </motion.p>
@@ -111,7 +111,7 @@ const SplashScreen = ({ onLogin }: { onLogin: (pass: string) => void }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5 }}
         onSubmit={handleSubmit}
-        className="w-full max-w-xs space-y-4 z-10"
+        className="w-full max-w-[280px] md:max-w-xs space-y-4 z-10"
       >
         <div className="relative group">
           <div className="absolute -inset-0.5 bg-tenerife-blue/30 rounded-xl blur opacity-0 group-focus-within:opacity-100 transition duration-500" />
@@ -121,20 +121,20 @@ const SplashScreen = ({ onLogin }: { onLogin: (pass: string) => void }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className={cn(
-              "relative w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-tenerife-blue/50 transition-all text-center tracking-widest",
+              "relative w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-tenerife-blue/50 transition-all text-center tracking-widest text-sm",
               error && "border-red-500 ring-2 ring-red-500/20"
             )}
           />
         </div>
         <button 
           type="submit"
-          className="w-full bg-tenerife-blue hover:bg-blue-600 text-white font-black py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(0,84,166,0.3)] hover:shadow-[0_0_30px_rgba(0,84,166,0.5)] uppercase tracking-widest text-sm"
+          className="w-full bg-tenerife-blue hover:bg-blue-600 text-white font-black py-3 md:py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(0,84,166,0.3)] hover:shadow-[0_0_30px_rgba(0,84,166,0.5)] uppercase tracking-widest text-sm"
         >
           Iniciar Sesión
         </button>
       </motion.form>
 
-      <footer className="absolute bottom-8 text-gray-500 font-display font-black tracking-[0.3em] uppercase text-glow text-xs">
+      <footer className="absolute bottom-8 left-0 right-0 text-gray-500 font-display font-black md:tracking-[0.3em] tracking-wider uppercase text-glow text-[8px] md:text-xs px-4 text-center">
         DIRECCIÓN DEPORTIVA 26-27 | App creada por Manel Losada
       </footer>
     </div>
@@ -1533,8 +1533,8 @@ export default function App() {
         </main>
       </div>
 
-      <footer className="h-12 border-t border-white/5 flex items-center justify-center bg-tenerife-dark px-6">
-        <p className="text-[10px] text-gray-500 font-display font-black tracking-[0.3em] uppercase text-glow">
+      <footer className="h-12 border-t border-white/5 flex items-center justify-center bg-tenerife-dark px-4 text-center">
+        <p className="text-[8px] md:text-[10px] text-gray-500 font-display font-black md:tracking-[0.3em] tracking-wider uppercase text-glow">
           DIRECCIÓN DEPORTIVA 26-27 | App creada por Manel Losada
         </p>
       </footer>

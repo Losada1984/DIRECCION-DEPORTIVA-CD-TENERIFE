@@ -1120,12 +1120,12 @@ export default function App() {
               <div className="flex flex-col lg:flex-row gap-8 items-start justify-center max-w-[1400px] mx-auto">
                 {/* Tactical Pitch Container */}
                 <div className="w-full lg:flex-1 space-y-6">
-                  <div className="flex items-center justify-between px-2">
-                    <h2 className="text-2xl md:text-3xl font-black tracking-tighter uppercase flex items-center text-white">
-                      <Activity className="w-6 h-6 text-tenerife-blue mr-4 shadow-[0_0_10px_rgba(0,84,166,0.5)]" />
-                      Vista Táctica
-                    </h2>
-                    <div className="flex items-center space-x-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between px-2 space-y-4 sm:space-y-0">
+                    <div className="flex items-center justify-between w-full sm:w-auto">
+                      <h2 className="text-xl md:text-3xl font-black tracking-tighter uppercase flex items-center text-white">
+                        <Activity className="w-5 h-5 md:w-6 md:h-6 text-tenerife-blue mr-3 md:mr-4 shadow-[0_0_10px_rgba(0,84,166,0.5)]" />
+                        Vista Táctica
+                      </h2>
                       <button 
                         onClick={async () => {
                           const node = document.getElementById('tactical-pitch-container');
@@ -1134,10 +1134,8 @@ export default function App() {
                               const dataUrl = await htmlToImage.toJpeg(node, { 
                                 quality: 0.95,
                                 backgroundColor: '#0a0a0c',
-                                pixelRatio: 2, // Higher quality
-                                style: {
-                                  borderRadius: '0'
-                                }
+                                pixelRatio: 2,
+                                style: { borderRadius: '0' }
                               });
                               const link = document.createElement('a');
                               link.download = `campograma_tenerife_${selectedCategory.replace(' ', '_')}.jpg`;
@@ -1148,16 +1146,43 @@ export default function App() {
                             }
                           }
                         }}
-                        className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all border border-white/10"
+                        className="sm:hidden flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all border border-white/10"
                       >
                         <ImageIcon className="w-4 h-4" />
-                        <span className="hidden sm:inline">Exportar Campograma</span>
-                        <span className="sm:hidden">JPG</span>
+                        <span>JPG</span>
                       </button>
-                      <div className="flex flex-col items-end">
-                        <p className="text-[10px] text-gray-500 font-black uppercase tracking-widest">DIRECCIÓN DEPORTIVA 26-27</p>
-                        <p className="text-[9px] text-tenerife-blue font-display font-black tracking-[0.4em] uppercase text-glow">App creada por Manel Losada</p>
+                    </div>
+
+                    <div className="flex items-center justify-between sm:justify-end space-x-4 w-full sm:w-auto">
+                      <div className="flex flex-col items-start sm:items-end">
+                        <p className="text-[8px] md:text-[10px] text-gray-500 font-black uppercase tracking-widest">DIRECCIÓN DEPORTIVA 26-27</p>
+                        <p className="text-[7px] md:text-[9px] text-tenerife-blue font-display font-black md:tracking-[0.4em] tracking-wider uppercase text-glow">App creada por Manel Losada</p>
                       </div>
+                      <button 
+                        onClick={async () => {
+                          const node = document.getElementById('tactical-pitch-container');
+                          if (node) {
+                            try {
+                              const dataUrl = await htmlToImage.toJpeg(node, { 
+                                quality: 0.95,
+                                backgroundColor: '#0a0a0c',
+                                pixelRatio: 2,
+                                style: { borderRadius: '0' }
+                              });
+                              const link = document.createElement('a');
+                              link.download = `campograma_tenerife_${selectedCategory.replace(' ', '_')}.jpg`;
+                              link.href = dataUrl;
+                              link.click();
+                            } catch (error) {
+                              console.error('Error exporting image:', error);
+                            }
+                          }
+                        }}
+                        className="hidden sm:flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all border border-white/10"
+                      >
+                        <ImageIcon className="w-4 h-4" />
+                        <span>Exportar Campograma</span>
+                      </button>
                     </div>
                   </div>
                   
